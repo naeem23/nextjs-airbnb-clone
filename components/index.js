@@ -2,6 +2,7 @@ import Button from './Button';
 import Container from './Container';
 import Heading from './Heading';
 import Input from './inputs/Input';
+import LoginModal from './modals/LoginModal';
 import Modal from './modals/Modal';
 import RegisterModal from './modals/RegisterModal';
 import Logo from './navbar/Logo';
@@ -22,4 +23,5 @@ export {
     RegisterModal,
     Heading,
     Input,
+    LoginModal,
 };
