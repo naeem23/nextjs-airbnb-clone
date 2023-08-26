@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 import useRegisterModal from '@/hooks/useRegisterModal';
 import { Button, Heading, Input, Modal } from '..';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -82,13 +83,13 @@ const RegisterModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                handleClick={() => {}}
+                handleClick={() => signIn('google')}
             />
             <Button
                 outline
                 label="Continue with Github"
                 icon={AiFillGithub}
-                handleClick={() => {}}
+                handleClick={() => signIn('github')}
             />
             <div className="text-slate-700 font-normal text-center mt-4">
                 Already have an account?{' '}
