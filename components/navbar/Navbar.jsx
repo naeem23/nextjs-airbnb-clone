@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Logo, Search, UserMenu } from '..';
+import { Categories, Container, Logo, Search, UserMenu } from '..';
 
 const Navbar = ({ currentUser }) => {
     return (
@@ -14,6 +14,9 @@ const Navbar = ({ currentUser }) => {
                     </div>
                 </Container>
             </div>
+
+            {/* Categories section */}
+            <Categories />
         </div>
     );
 };

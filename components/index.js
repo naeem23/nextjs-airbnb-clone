@@ -1,10 +1,12 @@
 import Button from './Button';
+import CategoryBox from './CategoryBox';
 import Container from './Container';
 import Heading from './Heading';
 import Input from './inputs/Input';
 import LoginModal from './modals/LoginModal';
 import Modal from './modals/Modal';
 import RegisterModal from './modals/RegisterModal';
+import Categories from './navbar/Categories';
 import Logo from './navbar/Logo';
 import MenuItem from './navbar/MenuItem';
 import Navbar from './navbar/Navbar';
@@ -24,4 +26,6 @@ export {
     Heading,
     Input,
     LoginModal,
+    Categories,
+    CategoryBox,
 };
