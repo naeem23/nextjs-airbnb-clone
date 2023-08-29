@@ -1,26 +1,38 @@
 'use client';
 
-import { useLoginModal, useRegisterModal } from '@/hooks';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+
+import { useLoginModal, useRegisterModal, useRentModal } from '@/hooks';
 import { MenuItem } from '..';
 
 const UserMenu = ({ currentUser }) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+    const rentModal = useRentModal();
+
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
     }, []);
 
+    const onRent = useCallback(() => {
+        if (!currentUser) {
+            return loginModal.onOpen();
+        }
+
+        // open rent modal
+        rentModal.onOpen();
+    }, [currentUser, loginModal, rentModal]);
+
     return (
         <div className="relative">
             <div className="flex flex-row items-center gap-3">
                 <div
-                    onClick={() => {}}
+                    onClick={onRent}
                     className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
                 >
                     Airbnb your home
@@ -67,7 +79,7 @@ const UserMenu = ({ currentUser }) => {
                                     label="My properties"
                                 />
                                 <MenuItem
-                                    handleClick={() => {}}
+                                    handleClick={rentModal.onOpen}
                                     label="Airbnd my home"
                                 />
                                 <hr />

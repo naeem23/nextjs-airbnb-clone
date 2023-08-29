@@ -6,14 +6,14 @@ import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
-import useRegisterModal from '@/hooks/useRegisterModal';
-import { Button, Heading, Input, Modal } from '..';
-import Link from 'next/link';
 import { signIn } from 'next-auth/react';
+
+import { Button, Heading, Input, Modal } from '..';
+import { useLoginModal, useRegisterModal } from '@/hooks';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
+    const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
 
     const {
@@ -44,6 +44,11 @@ const RegisterModal = () => {
                 setIsLoading(false);
             });
     };
+
+    const toggle = useCallback(() => {
+        registerModal.onClose();
+        loginModal.onOpen();
+    }, [registerModal, loginModal]);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -91,14 +96,14 @@ const RegisterModal = () => {
                 icon={AiFillGithub}
                 handleClick={() => signIn('github')}
             />
-            <div className="text-slate-700 font-normal text-center mt-4">
-                Already have an account?{' '}
-                <Link
-                    href="/login"
+            <div className="flex justify-center items-center gap-2 text-slate-700 font-normal text-center mt-4">
+                <div>Already have an account?</div>
+                <div
+                    onClick={toggle}
                     className="text-sky-600 cursor-pointer hover:underline"
                 >
                     Log in
-                </Link>
+                </div>
             </div>
         </div>
     );

@@ -91,3 +91,12 @@ export const categories = [
         description: 'This property is brand new and luxurious!',
     },
 ];
+
+export const steps = {
+    category: 0,
+    location: 1,
+    info: 2,
+    images: 3,
+    description: 4,
+    price: 5,
+};

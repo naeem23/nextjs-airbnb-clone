@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { AiFillGithub } from 'react-icons/ai';
@@ -48,6 +48,11 @@ const LoginModal = () => {
         });
     };
 
+    const toggle = useCallback(() => {
+        loginModal.onClose();
+        registerModal.onOpen();
+    }, [loginModal, registerModal]);
+
     const bodyContent = (
         <div className="flex flex-col gap-4">
             <Heading title="Welcome back" subtitle="Login to your account!" />
@@ -86,14 +91,14 @@ const LoginModal = () => {
                 icon={AiFillGithub}
                 handleClick={() => signIn('github')}
             />
-            <div className="text-slate-700 font-normal text-center mt-4">
-                Already have an account?{' '}
-                <Link
-                    href="/login"
+            <div className="flex items-center justify-center gap-2 text-slate-700 font-normal text-center mt-4">
+                <div>First time using Airbnb?</div>
+                <div
+                    onClick={toggle}
                     className="text-sky-600 cursor-pointer hover:underline"
                 >
-                    Log in
-                </Link>
+                    Create an account
+                </div>
             </div>
         </div>
     );
