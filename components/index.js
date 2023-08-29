@@ -3,6 +3,7 @@ import CategoryBox from './CategoryBox';
 import Container from './Container';
 import Heading from './Heading';
 import CategoryInput from './inputs/CategoryInput';
+import Counter from './inputs/Counter';
 import CountrySelect from './inputs/CountrySelect';
 import Input from './inputs/Input';
 import Map from './Map';
@@ -36,4 +37,5 @@ export {
     CategoryInput,
     CountrySelect,
     Map,
+    Counter,
 };
