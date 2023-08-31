@@ -5,6 +5,7 @@ import Heading from './Heading';
 import CategoryInput from './inputs/CategoryInput';
 import Counter from './inputs/Counter';
 import CountrySelect from './inputs/CountrySelect';
+import ImageUpload from './inputs/ImageUpload';
 import Input from './inputs/Input';
 import Map from './Map';
 import LoginModal from './modals/LoginModal';
@@ -38,4 +39,5 @@ export {
     CountrySelect,
     Map,
     Counter,
+    ImageUpload,
 };
