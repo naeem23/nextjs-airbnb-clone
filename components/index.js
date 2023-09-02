@@ -7,6 +7,7 @@ import Counter from './inputs/Counter';
 import CountrySelect from './inputs/CountrySelect';
 import ImageUpload from './inputs/ImageUpload';
 import Input from './inputs/Input';
+import TextArea from './inputs/TextArea';
 import Map from './Map';
 import LoginModal from './modals/LoginModal';
 import Modal from './modals/Modal';
@@ -40,4 +41,5 @@ export {
     Map,
     Counter,
     ImageUpload,
+    TextArea,
 };
