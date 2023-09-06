@@ -4,11 +4,13 @@ import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
 
 import { useLoginModal, useRegisterModal, useRentModal } from '@/hooks';
 import { MenuItem } from '..';
 
 const UserMenu = ({ currentUser }) => {
+    const router = useRouter();
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
     const rentModal = useRentModal();
@@ -63,7 +65,8 @@ const UserMenu = ({ currentUser }) => {
                         {currentUser ? (
                             <>
                                 <MenuItem
-                                    handleClick={() => {}}
+                                    handleClick={toggleOpen}
+                                    href="/trips"
                                     label="My trips"
                                 />
                                 <MenuItem

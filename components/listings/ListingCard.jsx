@@ -49,7 +49,7 @@ const ListingCard = ({
         }
 
         const start = new Date(reservation.startDate);
-        const end = new Date(reservation.endData);
+        const end = new Date(reservation.endDate);
 
         return `${format(start, 'PP')} - ${format(end, 'PP')}`;
     }, [reservation]);
@@ -91,12 +91,11 @@ const ListingCard = ({
                     <div className="font-semibold">$ {price}</div>
                     {!reservation && <div className="font-light">/night</div>}
                 </div>
-
                 {onAction && actionLabel && (
                     <Button
                         disabled={disabled}
                         small
-                        lable={actionLabel}
+                        label={actionLabel}
                         handleClick={handleCancel}
                     />
                 )}

@@ -1,13 +1,28 @@
 'use client';
 
-const MenuItem = ({ handleClick, label }) => {
+import Link from 'next/link';
+
+const MenuItem = ({ handleClick, label, href }) => {
     return (
-        <div
-            onClick={handleClick}
-            className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-        >
-            {label}
-        </div>
+        <>
+            {href ? (
+                <Link href={href}>
+                    <div
+                        onClick={handleClick}
+                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                    >
+                        {label}
+                    </div>
+                </Link>
+            ) : (
+                <div
+                    onClick={handleClick}
+                    className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                >
+                    {label}
+                </div>
+            )}
+        </>
     );
 };
 

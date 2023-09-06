@@ -28,6 +28,7 @@ import MenuItem from './navbar/MenuItem';
 import Navbar from './navbar/Navbar';
 import Search from './navbar/Search';
 import UserMenu from './navbar/UserMenu';
+import TripsClient from './trips/TripsClient';
 
 export {
     Navbar,
@@ -60,4 +61,5 @@ export {
     ListingCategory,
     ListingReservation,
     Calendar,
+    TripsClient,
 };
