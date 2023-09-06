@@ -11,6 +11,10 @@ import ImageUpload from './inputs/ImageUpload';
 import Input from './inputs/Input';
 import TextArea from './inputs/TextArea';
 import ListingCard from './listings/ListingCard';
+import ListingCategory from './listings/ListingCategory';
+import ListingClient from './listings/ListingClient';
+import ListingHead from './listings/ListingHead';
+import ListingInfo from './listings/ListingInfo';
 import Map from './Map';
 import LoginModal from './modals/LoginModal';
 import Modal from './modals/Modal';
@@ -48,4 +52,8 @@ export {
     EmptyState,
     ListingCard,
     HeartButton,
+    ListingClient,
+    ListingHead,
+    ListingInfo,
+    ListingCategory,
 };
