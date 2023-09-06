@@ -1,6 +1,6 @@
 import prisma from '@/libs/prismadb';
 
-export default async function getListingByid(params) {
+export default async function getListingById(params) {
     try {
         const { listingId } = params;
 

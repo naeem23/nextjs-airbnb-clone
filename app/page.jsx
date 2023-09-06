@@ -1,6 +1,4 @@
-import getCurrentUser from '@/actions/getCurrentUser';
-import getListings from '@/actions/getListings';
-
+import { getCurrentUser, getListings } from '@/actions';
 import { Container, EmptyState, ListingCard } from '@/components';
 
 const Home = async () => {

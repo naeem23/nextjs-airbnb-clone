@@ -1,15 +1,21 @@
-import getCurrentUser from '@/actions/getCurrentUser';
-import getListingByid from '@/actions/getListingById';
+import { getCurrentUser, getListingById, getReservations } from '@/actions';
 import { EmptyState, ListingClient } from '@/components';
 
 const ListingPage = async ({ params }) => {
-    const listing = await getListingByid(params);
+    const listing = await getListingById(params);
     const currentUser = await getCurrentUser();
+    const reservations = await getReservations(params);
 
     if (!listing) {
         return <EmptyState />;
     }
-    return <ListingClient listing={listing} currentUser={currentUser} />;
+    return (
+        <ListingClient
+            listing={listing}
+            currentUser={currentUser}
+            reservations={reservations}
+        />
+    );
 };
 
 export default ListingPage;
