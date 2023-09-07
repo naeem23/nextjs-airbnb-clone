@@ -8,7 +8,7 @@ import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 
-import { Button, Heading, Input, Modal } from '..';
+import { Button, Heading, Input, LoginModal, Modal } from '..';
 import { useLoginModal, useRegisterModal } from '@/hooks';
 
 const RegisterModal = () => {
@@ -34,7 +34,9 @@ const RegisterModal = () => {
         axios
             .post('/api/register', data)
             .then(() => {
+                toast.success('Registration complete.');
                 registerModal.onClose();
+                loginModal.onOpen();
             })
             .catch((error) => {
                 console.log(error);

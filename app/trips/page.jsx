@@ -1,5 +1,6 @@
 import { getCurrentUser, getReservations } from '@/actions';
-import { EmptyState, TripsClient } from '@/components';
+import { EmptyState } from '@/components';
+import TripsClient from './TripsClient';
 
 const TripPage = async () => {
     const currentUser = await getCurrentUser();

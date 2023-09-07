@@ -70,11 +70,13 @@ const UserMenu = ({ currentUser }) => {
                                     label="My trips"
                                 />
                                 <MenuItem
-                                    handleClick={() => {}}
+                                    handleClick={toggleOpen}
+                                    href="/favorites"
                                     label="My favorites"
                                 />
                                 <MenuItem
-                                    handleClick={() => {}}
+                                    handleClick={toggleOpen}
+                                    href="/reservations"
                                     label="My reservations"
                                 />
                                 <MenuItem

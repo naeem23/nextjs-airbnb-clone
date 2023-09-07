@@ -1,5 +1,6 @@
 import { getCurrentUser, getListings } from '@/actions';
 import { Container, EmptyState, ListingCard } from '@/components';
+import Link from 'next/link';
 
 const Home = async () => {
     const listings = await getListings();

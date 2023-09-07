@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import toast from 'react-hot-toast';
 
-import { Container, Heading, ListingCard } from '..';
+import { Container, Heading, ListingCard } from '../../components';
 
 const TripsClient = ({ reservations, currentUser }) => {
     const router = useRouter();

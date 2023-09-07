@@ -72,7 +72,6 @@ const ListingCard = ({
                         <HeartButton
                             listingId={data.id}
                             currentUser={currentUser}
-                            className
                         />
                     </div>
                 </div>
