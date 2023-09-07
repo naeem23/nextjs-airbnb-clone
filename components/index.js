@@ -22,6 +22,7 @@ import LoginModal from './modals/LoginModal';
 import Modal from './modals/Modal';
 import RegisterModal from './modals/RegisterModal';
 import RentModal from './modals/RentModal';
+import SearchModal from './modals/SearchModal';
 import Categories from './navbar/Categories';
 import Logo from './navbar/Logo';
 import MenuItem from './navbar/MenuItem';
@@ -60,4 +61,5 @@ export {
     ListingCategory,
     ListingReservation,
     Calendar,
+    SearchModal,
 };

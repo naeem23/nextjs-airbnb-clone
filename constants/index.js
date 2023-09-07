@@ -100,3 +100,9 @@ export const steps = {
     description: 4,
     price: 5,
 };
+
+export const searchSteps = {
+    location: 0,
+    date: 1,
+    info: 2,
+};

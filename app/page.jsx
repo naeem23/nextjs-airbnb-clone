@@ -1,9 +1,8 @@
 import { getCurrentUser, getListings } from '@/actions';
 import { Container, EmptyState, ListingCard } from '@/components';
-import Link from 'next/link';
 
-const Home = async () => {
-    const listings = await getListings();
+const Home = async ({ searchParams }) => {
+    const listings = await getListings(searchParams);
     const currentUser = await getCurrentUser();
 
     if (listings.length === 0) {

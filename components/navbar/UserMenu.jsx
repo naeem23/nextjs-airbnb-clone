@@ -80,11 +80,15 @@ const UserMenu = ({ currentUser }) => {
                                     label="My reservations"
                                 />
                                 <MenuItem
-                                    handleClick={() => {}}
+                                    handleClick={toggleOpen}
+                                    href="/properties"
                                     label="My properties"
                                 />
                                 <MenuItem
-                                    handleClick={rentModal.onOpen}
+                                    handleClick={() => {
+                                        toggleOpen();
+                                        rentModal.onOpen();
+                                    }}
                                     label="Airbnd my home"
                                 />
                                 <hr />

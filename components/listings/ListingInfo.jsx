@@ -3,7 +3,7 @@
 import Image from 'next/image';
 
 import { useCountries } from '@/hooks';
-import { ListingCategory } from '..';
+import { ListingCategory, Map } from '..';
 import dynamic from 'next/dynamic';
 
 const ListingInfo = ({
@@ -18,8 +18,6 @@ const ListingInfo = ({
     const { getByValue } = useCountries();
 
     const coordinates = getByValue(locationValue)?.latlng;
-
-    const Map = dynamic(() => import('../Map'), { ssr: false });
 
     return (
         <div className="col-span-4 flex flex-col gap-8">
